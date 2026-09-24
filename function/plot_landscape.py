@@ -43,9 +43,10 @@ def plot_landscape(covariance, sensors, frequencies, truth, estimates,
                    label=r"Ground-truth location $\boldsymbol{p}_{\natural}$", zorder=4)
         for name, position in estimates.items():
             marker, color, size = styles[name]
+            error = np.linalg.norm(position - truth)
             panel.plot(*position, marker=marker, markersize=size, color=color,
                        markerfacecolor="none", markeredgewidth=1.6, linestyle="none",
-                       label=f"{name} ({runtimes_ms[name]:.2f} ms)", zorder=5,
+                       label=f"{name}\n(error = {error:.3f} m, {runtimes_ms[name]:.2f} ms)", zorder=5,
                        path_effects=[effects.Stroke(linewidth=2.4, foreground="white"),
                                      effects.Normal()])
 

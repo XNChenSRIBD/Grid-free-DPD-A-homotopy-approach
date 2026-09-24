@@ -10,7 +10,7 @@ python demo_1km.py
 
 Each script prints the four estimated positions, Euclidean errors, and runtimes, saves the observation, estimates, and runtimes to `results_*.npz`, and draws `landscape_*.png`. The heatmap is the **unsmoothed, normalized maximum-eigenvalue DPD objective**, shown with the paper's viridis colormap and white contours. It marks the ground-truth location $\boldsymbol{p}_{\natural}$, all four estimates, and the receivers. The local view includes coordinate ticks and the actual static search grid (2 m or 10 m spacing); its dense heatmap samples are used only for plotting.
 
-Each method's legend entry reports the wall-clock time of that single complete algorithm call in milliseconds, measured with `time.perf_counter`. Observation generation, shared grid construction, and plotting are excluded. Runtime depends on the machine and numerical libraries.
+Each method's legend entry reports its Euclidean localization error in meters and the wall-clock time of that single complete algorithm call in milliseconds, measured with `time.perf_counter`. Observation generation, shared grid construction, and plotting are excluded. Runtime depends on the machine and numerical libraries.
 
 ## Scene and algorithms
 

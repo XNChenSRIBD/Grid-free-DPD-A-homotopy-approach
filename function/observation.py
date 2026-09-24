@@ -3,7 +3,7 @@
 import numpy as np
 
 
-def generate_observation(sensors, truth, cp_length, snr_db=-10, seed=20260924):
+def generate_observation(sensors, truth, cp_length, snr_db=-15, seed=20260924):
     """Return sample covariance (frequency, station, station) and frequencies.
 
     SNR is the received time-domain signal-to-noise power ratio at station 1.

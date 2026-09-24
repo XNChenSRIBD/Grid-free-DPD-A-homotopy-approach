@@ -9,7 +9,7 @@ from .grid_methods import ml_spectrum
 
 
 def plot_landscape(covariance, sensors, frequencies, truth, estimates,
-                   runtimes_ms, grid_axis, half_width, output_path):
+                   runtimes_ms, grid_axis, half_width, output_path, snr_db):
     """Dense maps are evaluated here only after all estimates have been computed."""
     plt.rcParams.update({
         "font.family": "serif",
@@ -57,7 +57,7 @@ def plot_landscape(covariance, sensors, frequencies, truth, estimates,
            xlabel=r"$x$ (m)", ylabel=r"$y$ (m)", aspect="equal")
     scene_size = (f"{2 * half_width:g} m" if half_width < 500
                   else f"{2 * half_width / 1000:g} km")
-    ax.set_title(f"{scene_size} × {scene_size}, SNR = −10 dB", pad=10)
+    ax.set_title(f"{scene_size} × {scene_size}, SNR = {snr_db:g} dB", pad=10)
     fig.legend(*ax.get_legend_handles_labels(), loc="upper center", ncol=3,
                bbox_to_anchor=(0.49, 0.995), frameon=True, edgecolor="black",
                fontsize=9.5, columnspacing=1.2, handletextpad=0.5)

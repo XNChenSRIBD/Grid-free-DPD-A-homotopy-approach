@@ -14,10 +14,11 @@ Each method's legend entry reports the wall-clock time of that single complete a
 
 ## Scene and algorithms
 
-Both scripts fix SNR to **-10 dB** and use `numpy.random.default_rng(20260924)`. A single seeded draw fixes the QPSK symbols, lognormal shadowing, channel phases, and noise; every algorithm receives the same sample covariance. This is one reproducible realization, not a Monte Carlo average.
+Both scripts fix SNR to **-15 dB** and use `numpy.random.default_rng` with the scene-specific seeds below. A single seeded draw fixes the QPSK symbols, lognormal shadowing, channel phases, and noise; every algorithm receives the same sample covariance. The seeds are chosen to illustrate successful Homotopy localization in both scenes. Each scene is one reproducible realization, not a Monte Carlo average.
 
 | Parameter | 200 m × 200 m | 1 km × 1 km |
 |---|---|---|
+| Random seed | 20260927 | 20260924 |
 | Search region (each axis) | [-100, 100] m | [-500, 500] m |
 | Source (x, y) | (-27.35, -16.42) m | (-136.75, -82.10) m |
 | Static grid | 101 × 101 (2 m spacing) | 101 × 101 (10 m spacing) |

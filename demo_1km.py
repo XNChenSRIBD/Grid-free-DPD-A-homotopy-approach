@@ -9,7 +9,7 @@ from function.grid_methods import vanilla, contextual, lrmc
 from function.homotopy import homotopy
 from function.plot_landscape import plot_landscape
 
-snr_db = -10
+snr_db = -15
 seed = 20260924
 sensors = np.array([[-475., 155.], [-295., -405.], [295., -405.], [475., 155.], [0., 500.]])
 truth = np.array([-136.75, -82.10])
@@ -48,4 +48,4 @@ np.savez(output / "results_1km.npz", sensors=sensors, truth=truth, covariance=co
          frequencies=frequencies, snr_db=snr_db, seed=seed, **estimates,
          **{f"runtime_{name}_ms": elapsed for name, elapsed in runtimes_ms.items()})
 plot_landscape(covariance, sensors, frequencies, truth, estimates, runtimes_ms, axis, half_width,
-               output / "landscape_1km.png")
+               output / "landscape_1km.png", snr_db)

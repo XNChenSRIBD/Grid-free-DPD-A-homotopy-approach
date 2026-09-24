@@ -12,6 +12,16 @@ Each script prints the four estimated positions, Euclidean errors, and runtimes,
 
 Each method's legend entry reports its Euclidean localization error in meters and the wall-clock time of that single complete algorithm call in milliseconds, measured with `time.perf_counter`. Observation generation, shared grid construction, and plotting are excluded. Runtime depends on the machine and numerical libraries.
 
+## Visualization results
+
+### 200 m × 200 m, SNR = -15 dB
+
+![200 m scene: ground-truth location and four estimates, with localization errors and runtimes](landscape_200m.png)
+
+### 1 km × 1 km, SNR = -15 dB
+
+![1 km scene: ground-truth location and four estimates, with localization errors and runtimes](landscape_1km.png)
+
 ## Scene and algorithms
 
 Both scripts fix SNR to **-15 dB** and use `numpy.random.default_rng` with the scene-specific seeds below. A single seeded draw fixes the QPSK symbols, lognormal shadowing, channel phases, and noise; every algorithm receives the same sample covariance. The seeds are chosen to illustrate successful Homotopy localization in both scenes. Each scene is one reproducible realization, not a Monte Carlo average.
